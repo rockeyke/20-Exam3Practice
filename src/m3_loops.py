@@ -218,9 +218,14 @@ def practice_problem3(start, n, threshold):
     #    TIME ESTIMATE:   < 15 minutes.
     ###########################################################################
     seq = []
-    for k in range(n):
-        if (math.sin(start+k) + math.cos(start+k)) > threshold:
-            seq.append(start+k)
+    counter = 0
+    while True:
+        if (math.sin(start) + math.cos(start)) > threshold:
+            seq.append(start)
+            counter += 1
+        start += 1
+        if counter == n:
+            break
     return seq
 
 
